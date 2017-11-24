@@ -37,15 +37,14 @@ class KakaoController < ApplicationController
     else
       msg = "?????"
     end
-    
-    message = {
-      text: msg
+
+    result = {
+      message: {
+        text: msg
+      },
+      keyboard: basic_keyboard
     }
-   
-     basic_keyboard  = {
-      :type => "buttons",
-      :buttons => ["중식", "일식", "고기", "라면", "한식", "치킨", "분식/야식/디저트", "기타" ]
-    }
+
     
     render json: result
   end
